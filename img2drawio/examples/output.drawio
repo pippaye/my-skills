@@ -1,0 +1,146 @@
+<mxfile host="app.diagrams.net" modified="2026-05-27T00:00:00.000Z" agent="img2drawio" version="28.0.0">
+  <diagram id="rdma-flow" name="RDMA Flow">
+    <mxGraphModel dx="1534" dy="626" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1534" pageHeight="626" background="#FFFFFF" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+
+        <mxCell id="sender_label" value="SENDER" style="fontFamily=Arial;text=1;html=1;strokeColor=none;fillColor=none;fontColor=#C00000;fontStyle=1;fontSize=30;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="50" y="65" width="150" height="45" as="geometry"/>
+        </mxCell>
+        <mxCell id="receiver_label" value="RECEIVER" style="fontFamily=Arial;text=1;html=1;strokeColor=none;fillColor=none;fontColor=#C00000;fontStyle=1;fontSize=30;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="1330" y="65" width="165" height="45" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="sender_hbm" value="GPU HBM" style="fontFamily=Arial;rounded=0;whiteSpace=wrap;html=1;fillColor=#F5F5F5;strokeColor=#1F365C;strokeWidth=2;fontSize=28;verticalAlign=bottom;spacingBottom=12;fontSize=30;" vertex="1" parent="1">
+          <mxGeometry x="36" y="176" width="448" height="366" as="geometry"/>
+        </mxCell>
+        <mxCell id="receiver_hbm" value="GPU HBM" style="fontFamily=Arial;rounded=0;whiteSpace=wrap;html=1;fillColor=#F5F5F5;strokeColor=#1F365C;strokeWidth=2;fontSize=28;verticalAlign=bottom;spacingBottom=12;fontSize=30;" vertex="1" parent="1">
+          <mxGeometry x="1049" y="177" width="441" height="367" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="sender_compute" value="Compute&lt;br&gt;Buffer" style="fontFamily=Arial;rounded=0;whiteSpace=wrap;html=1;fillColor=#BDD7ED;strokeColor=#1F365C;strokeWidth=2;fontSize=28;" vertex="1" parent="1">
+          <mxGeometry x="55" y="196" width="180" height="280" as="geometry"/>
+        </mxCell>
+        <mxCell id="receiver_compute" value="Compute&lt;br&gt;Buffer" style="fontFamily=Arial;rounded=0;whiteSpace=wrap;html=1;fillColor=#BDD7ED;strokeColor=#1F365C;strokeWidth=2;fontSize=28;" vertex="1" parent="1">
+          <mxGeometry x="1294" y="202" width="181" height="276" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="sender_channel_1" value="Channel&lt;br&gt;Buffer" style="fontFamily=Arial;rounded=0;whiteSpace=wrap;html=1;fillColor=#FFE699;strokeColor=#1F365C;strokeWidth=2;fontSize=28;" vertex="1" parent="1">
+          <mxGeometry x="304" y="202" width="165" height="91" as="geometry"/>
+        </mxCell>
+        <mxCell id="sender_channel_2" value="Channel&lt;br&gt;Buffer" style="fontFamily=Arial;rounded=0;whiteSpace=wrap;html=1;fillColor=#FFE699;strokeColor=#1F365C;strokeWidth=2;fontSize=28;" vertex="1" parent="1">
+          <mxGeometry x="302" y="311" width="164" height="90" as="geometry"/>
+        </mxCell>
+        <mxCell id="receiver_channel_1" value="Channel&lt;br&gt;Buffer" style="fontFamily=Arial;rounded=0;whiteSpace=wrap;html=1;fillColor=#FFE699;strokeColor=#1F365C;strokeWidth=2;fontSize=28;" vertex="1" parent="1">
+          <mxGeometry x="1059" y="200" width="164" height="90" as="geometry"/>
+        </mxCell>
+        <mxCell id="receiver_channel_2" value="Channel&lt;br&gt;Buffer" style="fontFamily=Arial;rounded=0;whiteSpace=wrap;html=1;fillColor=#FFE699;strokeColor=#1F365C;strokeWidth=2;fontSize=28;" vertex="1" parent="1">
+          <mxGeometry x="1057" y="309" width="165" height="89" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="sender_cpu" value="CPU proxy" style="fontFamily=Arial;rounded=0;whiteSpace=wrap;html=1;fillColor=#F8CBAD;strokeColor=#1F365C;strokeWidth=2;fontSize=28;" vertex="1" parent="1">
+          <mxGeometry x="304" y="57" width="374" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="receiver_cpu" value="CPU proxy" style="fontFamily=Arial;rounded=0;whiteSpace=wrap;html=1;fillColor=#F8CBAD;strokeColor=#1F365C;strokeWidth=2;fontSize=28;" vertex="1" parent="1">
+          <mxGeometry x="858" y="58" width="374" height="60" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="sender_nic" value="RDMA&lt;br&gt;NIC" style="fontFamily=Arial;rounded=0;whiteSpace=wrap;html=1;fillColor=#C6E0B4;strokeColor=#1F365C;strokeWidth=2;fontSize=28;" vertex="1" parent="1">
+          <mxGeometry x="548" y="202" width="135" height="90" as="geometry"/>
+        </mxCell>
+        <mxCell id="receiver_nic" value="RDMA&lt;br&gt;NIC" style="fontFamily=Arial;rounded=0;whiteSpace=wrap;html=1;fillColor=#C6E0B4;strokeColor=#1F365C;strokeWidth=2;fontSize=28;" vertex="1" parent="1">
+          <mxGeometry x="846" y="200" width="134" height="90" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="free_label" value="Free" style="fontFamily=Arial;text=1;html=1;strokeColor=none;fillColor=none;fontSize=28;align=center;verticalAlign=middle;fontSize=28;" vertex="1" parent="1">
+          <mxGeometry x="306" y="145" width="72" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="rdma_write_label" value="RDMA write" style="fontFamily=Arial;text=1;html=1;strokeColor=none;fillColor=none;fontSize=28;align=center;verticalAlign=middle;fontSize=28;" vertex="1" parent="1">
+          <mxGeometry x="448" y="145" width="165" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="cts_label" value="CTS" style="fontFamily=Arial;text=1;html=1;strokeColor=none;fillColor=none;fontSize=28;align=center;verticalAlign=middle;fontSize=28;" vertex="1" parent="1">
+          <mxGeometry x="821" y="146" width="62" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="complete_label" value="Complete" style="fontFamily=Arial;text=1;html=1;strokeColor=none;fillColor=none;fontSize=28;align=center;verticalAlign=middle;fontSize=28;" vertex="1" parent="1">
+          <mxGeometry x="927" y="146" width="130" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="flush_label" value="Flush" style="fontFamily=Arial;text=1;html=1;strokeColor=none;fillColor=none;fontSize=28;align=center;verticalAlign=middle;fontSize=28;" vertex="1" parent="1">
+          <mxGeometry x="1150" y="146" width="88" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="network_label" value="RDMA&lt;br&gt;network" style="fontFamily=Arial;text=1;html=1;strokeColor=none;fillColor=none;fontSize=28;align=center;verticalAlign=middle;fontSize=32;" vertex="1" parent="1">
+          <mxGeometry x="710" y="260" width="130" height="76" as="geometry"/>
+        </mxCell>
+        <mxCell id="copy_left" value="Copy" style="fontFamily=Arial;text=1;html=1;strokeColor=none;fillColor=none;fontSize=28;align=center;verticalAlign=middle;fontSize=28;" vertex="1" parent="1">
+          <mxGeometry x="236" y="203" width="70" height="35" as="geometry"/>
+        </mxCell>
+        <mxCell id="copy_right" value="Copy" style="fontFamily=Arial;text=1;html=1;strokeColor=none;fillColor=none;fontSize=28;align=center;verticalAlign=middle;fontSize=28;" vertex="1" parent="1">
+          <mxGeometry x="1228" y="198" width="70" height="35" as="geometry"/>
+        </mxCell>
+        <mxCell id="dma_left" value="DMA" style="fontFamily=Arial;text=1;html=1;strokeColor=none;fillColor=none;fontSize=28;align=center;verticalAlign=middle;fontSize=28;" vertex="1" parent="1">
+          <mxGeometry x="482" y="211" width="70" height="35" as="geometry"/>
+        </mxCell>
+        <mxCell id="dma_right" value="DMA" style="fontFamily=Arial;text=1;html=1;strokeColor=none;fillColor=none;fontSize=28;align=center;verticalAlign=middle;fontSize=28;" vertex="1" parent="1">
+          <mxGeometry x="986" y="210" width="70" height="35" as="geometry"/>
+        </mxCell>
+        <mxCell id="sender_dots" value="•  •  •" style="fontFamily=Arial;text=1;html=1;strokeColor=none;fillColor=none;fontSize=28;align=center;verticalAlign=middle;fontSize=34;" vertex="1" parent="1">
+          <mxGeometry x="340" y="430" width="100" height="35" as="geometry"/>
+        </mxCell>
+        <mxCell id="receiver_dots" value="•  •  •" style="fontFamily=Arial;text=1;html=1;strokeColor=none;fillColor=none;fontSize=28;align=center;verticalAlign=middle;fontSize=34;" vertex="1" parent="1">
+          <mxGeometry x="1094" y="426" width="100" height="35" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="e_cpu_sender_channel" value="" style="fontFamily=Arial;endArrow=classic;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;strokeColor=#000000;strokeWidth=3;exitX=0.22;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="sender_cpu" target="sender_channel_1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e_cpu_receiver_channel" value="" style="fontFamily=Arial;endArrow=classic;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;strokeColor=#000000;strokeWidth=3;exitX=0.75;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="receiver_cpu" target="receiver_channel_1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e_sender_compute_channel" value="" style="fontFamily=Arial;endArrow=classic;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;strokeColor=#000000;strokeWidth=3;exitX=1;exitY=0.18;entryX=0;entryY=0.5;" edge="1" parent="1" source="sender_compute" target="sender_channel_1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e_sender_compute_channel_2" value="" style="fontFamily=Arial;endArrow=classic;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;strokeColor=#000000;strokeWidth=3;exitX=1;exitY=0.57;entryX=0;entryY=0.5;" edge="1" parent="1" source="sender_compute" target="sender_channel_2">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e_sender_compute_dots" value="" style="fontFamily=Arial;endArrow=classic;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;strokeColor=#000000;strokeWidth=3;exitX=1;exitY=0.9;entryX=0;entryY=0.5;" edge="1" parent="1" source="sender_compute" target="sender_dots">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e_sender_channel_nic" value="" style="fontFamily=Arial;endArrow=classic;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;strokeColor=#000000;strokeWidth=3;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="sender_channel_1" target="sender_nic">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e_sender_nic_receiver_nic" value="" style="fontFamily=Arial;endArrow=classic;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;strokeColor=#000000;strokeWidth=3;exitX=1;exitY=0.48;entryX=0;entryY=0.5;" edge="1" parent="1" source="sender_nic" target="receiver_nic">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e_receiver_nic_channel" value="" style="fontFamily=Arial;endArrow=classic;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;strokeColor=#000000;strokeWidth=3;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="receiver_nic" target="receiver_channel_1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e_receiver_channel_compute" value="" style="fontFamily=Arial;endArrow=classic;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;strokeColor=#000000;strokeWidth=3;exitX=1;exitY=0.5;entryX=0;entryY=0.15;" edge="1" parent="1" source="receiver_channel_1" target="receiver_compute">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e_receiver_channel_compute_2" value="" style="fontFamily=Arial;endArrow=classic;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;strokeColor=#000000;strokeWidth=3;exitX=1;exitY=0.5;entryX=0;entryY=0.54;" edge="1" parent="1" source="receiver_channel_2" target="receiver_compute">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e_receiver_dots_compute" value="" style="fontFamily=Arial;endArrow=classic;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;strokeColor=#000000;strokeWidth=3;exitX=1;exitY=0.5;entryX=0;entryY=0.88;" edge="1" parent="1" source="receiver_dots" target="receiver_compute">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="e_sender_nic_cpu" value="" style="fontFamily=Arial;endArrow=classic;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;strokeColor=#000000;strokeWidth=3;exitX=0.5;exitY=0;entryX=0.87;entryY=1;" edge="1" parent="1" source="sender_nic" target="sender_cpu">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e_receiver_nic_cpu" value="" style="fontFamily=Arial;endArrow=classic;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;strokeColor=#000000;strokeWidth=3;exitX=0.5;exitY=0;entryX=0.15;entryY=1;" edge="1" parent="1" source="receiver_nic" target="receiver_cpu">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="e_cts_curve" value="" style="fontFamily=Arial;endArrow=classic;html=1;curved=1;rounded=0;strokeColor=#000000;strokeWidth=3;" edge="1" parent="1" source="sender_nic" target="receiver_nic">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="635" y="228"/>
+              <mxPoint x="750" y="245"/>
+              <mxPoint x="895" y="120"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
