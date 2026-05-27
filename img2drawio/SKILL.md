@@ -18,7 +18,7 @@ Convert a structured image into an editable draw.io diagram. The output must be 
 - Force Arial for all text: every text-bearing draw.io style must include `fontFamily=Arial`.
 - Use uncompressed `.drawio` XML, not compressed diagram payloads.
 - Export PNG previews directly with `drawio` or `draw.io` CLI; do not use a Python wrapper.
-- Use multimodal inspection for visual comparison. Do not use Python pixel-diff scripts.
+- Use multimodal inspection for visual comparison by default. Pixel-level diff is optional and off by default.
 
 ## Workflow
 
@@ -96,7 +96,15 @@ Convert a structured image into an editable draw.io diagram. The output must be 
 
 8. If issues remain, edit `$WORKDIR/output.py`, regenerate, validate, export, and inspect again. Use `CONFIG` for broad style tuning; edit the template string for structural fixes such as coordinates, labels, source/target links, or waypoints. Run at most 3 repair rounds unless the user asks for more.
 
-9. Final response must report the three deliverables:
+9. Optional pixel-diff mode. Run this only when the user explicitly asks for pixel-level diff output, or when a stricter debugging pass is worth extra artifacts:
+
+   ```bash
+   python <skill-dir>/scripts/compare_pixels.py <source-image> "$WORKDIR/output.png" "$WORKDIR/pixel_diff"
+   ```
+
+   This writes `$WORKDIR/pixel_diff_side.png`, `$WORKDIR/pixel_diff_overlay.png`, and `$WORKDIR/pixel_diff_diff.png`, and prints `mean_pixel_error`. These files are diagnostic artifacts, not required deliverables.
+
+10. Final response must report the three deliverables:
 
    - `$WORKDIR/output.py`
    - `$WORKDIR/output.drawio`
@@ -160,3 +168,9 @@ Targeted repair rules:
 - Invalid XML or validation failure: fix `$WORKDIR/output.py` generation logic first, then regenerate.
 
 Stop after 3 repair rounds unless the user asks for further refinement.
+
+## Optional Pixel-Diff Mode
+
+Default behavior is multimodal inspection only. Do not generate pixel diff files unless requested.
+
+Use `scripts/compare_pixels.py` when exact visual drift needs debugging. It is useful for spotting large shifts, missing blocks, and color mismatches, but the numeric score is only a guide because draw.io text rendering, anti-aliasing, and shape metrics may differ from the source image even when the editable diagram is acceptable.
